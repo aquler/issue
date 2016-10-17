@@ -1,0 +1,89 @@
+/*!
+ * @function：登录样式
+ * @author：jintao
+ * @date：2016-08
+ */
+
+ /*淘宝的样式初始化*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; } 
+
+/*body设置*/
+body {
+	background-image: url("../images/背景图.png");
+	background-repeat: no-repeat;
+	background-size: 410px;
+	background-position: 10vw 20vh;
+	font-family: "Microsoft Yahei";
+}
+
+/* form设置 */
+form {
+	display: inline-block;
+	border: 1px solid #C6C5C5;
+	border-radius: .5em;
+	box-shadow: 2px 2px 4px #454545;
+	padding: 1em;
+	position: absolute;
+	top: 50%;
+	left: 75%;
+	transform: translate(-50%,-50%);
+}
+form>div:first-child, form>div:nth-child(2){
+	border: 1px solid #C6C5C5;
+	padding: .6em;
+	margin-bottom: .9em;
+	border-radius: .3em;
+	min-width: 248px;
+}
+form>div>img{
+	display: inline-block;
+	height: auto;
+/*	max-width: 100%;*/
+}
+
+form>div>img,form>div>input {
+	vertical-align: middle;
+}
+form>div>input {
+	padding: .35em;
+    border : 0;
+	outline: 0;
+}
+form>span {
+	font-size: .9em;
+	color: #717070;
+	vertical-align: top;
+}
+form>a {
+	float: right;
+	color: #e42b00;
+}
+form>div:nth-child(3) {
+	font-size: 12px;
+	color: #e42b00;
+}
+form>div:last-child {
+	margin: 1.5vh 0 1.5vh;
+	text-align: center;
+}
+form input[type=submit] {
+	width: 100%;
+	padding: .7em 0;
+	color: #fff;
+	background: #e42b00;
+	border-radius: .3em;
+}

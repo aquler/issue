@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    
+    <link rel="stylesheet" href="css/amazeui.min.css"/>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，为了更好的体验效果，请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+  <![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+    <div class="am-topbar-brand">
+        <strong>TV</strong> <small>价格预警系统</small>
+    </div>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+            <li class="am-dropdown" data-am-dropdown>
+                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+                    <span class="am-icon-users"></span> 用户名 <span class="am-icon-caret-down"></span>
+                </a>
+                <ul class="am-dropdown-content">
+                    <li><a href="personal-manage.html"><span class="am-icon-user"></span> 个人中心</a></li>
+                    <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+                </ul>
+            </li>
+            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="am-cf admin-main">
+    <!-- sidebar start -->
+    <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+        <div class="am-offcanvas-bar admin-offcanvas-bar">
+            <ul class="am-list admin-sidebar-list">
+                <li><a href="index.html" id="sidebar-selected"><span class="am-icon-home"></span> 监督价格异常</a></li>
+                <li><a href="abnormal-history.html"><span class="am-icon-list"></span> 价格异常历史</a></li>
+                <li><a href="enter-price.html"><span class="am-icon-pencil-square-o"></span> 录入价格</a></li>
+                <li class="admin-parent">
+                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-cog"></span> 管理平台 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                    <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+                        <li><a href="model-manage.html" class="am-cf"><span class="am-icon-tv"></span> 型号管理</a></li>
+                        <li><a href="message-manage.html"><span class="am-icon-comments"></span> 消息管理</a></li>
+                        <li><a href="user-manage.html"><span class="am-icon-users"></span> 用户管理</a></li>
+                        <li><a href="alert-manage.html"><span class="am-icon-exclamation-triangle"></span> 报警机制</a></li>
+                        <li><a href="personal-manage.html"><span class="am-icon-user"></span> 个人中心</a></li>
+                        <li><a href="log-manage.html"><span class="am-icon-file-text-o"></span> 日志管理</a></li>
+                        <li><a href="platform-manage.html"><span class="am-icon-calendar"></span> 平台管理</a></li>
+                        <li><a href="power-manage.html"><span class="am-icon-balance-scale"></span> 权限组管理</a></li>
+                        <li><a href="series-manage.html"><span class="am-icon-calendar-o"></span> 系列管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="am-panel am-panel-default admin-sidebar-panel">
+                <div class="am-panel-bd">
+                    <p><span class="am-icon-bookmark"></span> 公告</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- sidebar end -->
+
+    <!-- content start -->
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <!-- 抓取时间 -->
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf"><span class="am-text-primary">最近一次抓取时间</span> : <span class="time">2016/8/14 13:00</span></div>
+                <div class="am-fr">
+                    <button class="am-btn am-btn-default" onclick="location.reload();">&nbsp;刷新&nbsp;</button>
+                </div>
+            </div>
+
+            <hr>
+            <!-- 筛选 -->
+            <div class="am-g">
+                <form class="am-u-sm-12 am-u-md-6" id="form-filter">
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-form-group" action="">
+                            <select data-am-selected="{btnSize: 'sm'}" id="select-series">
+                                <option value="全部系列">全部系列</option>
+                                <option value="K系列">K系列</option>
+                                <option value="A系列" >A系列</option>
+                                <option value="U系列">U系列</option>
+                                <option value="T系列">T系列</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="am-u-sm-12 am-u-md-6">
+                        <div class="am-form-group" action="">
+                            <select data-am-selected="{btnSize: 'sm'}" id="select-status">
+                                <option value="all-status">全部状态</option>
+                                <option value="normal">正常</option>
+                                <option value="abnormal">异常</option>
+                            </select>
+                        </div>
+                    </div>           
+                </form>
+                <div class="am-u-sm-12 am-u-md-3 am-fr">
+                    <form class="am-input-group am-input-group-sm">
+                        <input type="text" class="am-form-field" placeholder="请输入型号" id="search-input">
+                        <span class="am-input-group-btn">
+                            <button class="am-btn am-btn-default" type="submit" id="search-btn">搜索</button>
+                        </span>
+                    </form>
+                </div>
+            </div>
+
+            <!-- 表格内容 -->
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <form class="am-form am-scrollable-horizontal">
+                        <table class="am-table am-table-hover am-text-nowrap">
+                            <thead>
+                                <tr>
+                                    <td>序号</td>
+                                    <td>型号</td>
+                                    <td>标准价格</td>
+                                    <td>京东</td>
+                                    <td>苏宁</td>
+                                    <td>国美</td>
+                                    <td>飞牛</td>
+                                </tr>
+                            </thead>   
+  
+                            <tbody>
+                                <tr class="K">
+                                    <td><img src="images/Tv/Tv-1.png"></td>
+                                    <td>KX55</td>
+                                    <td>2499</td>
+                                    <td><a class="abnormal">2499</a></td>
+                                    <td><a class="normal">2499</a></td>
+                                    <td><a class="normal">2499</a></td>
+                                    <td>2499</td>
+                                </tr>
+                                <tr class="A">
+                                    <td><img src="images/Tv/Tv-2.png"></td>
+                                    <td>K55</td>
+                                    <td>2399</td>
+                                    <td><a class="abnormal">2499</a></td>
+                                    <td><a class="normal">2499</a></td>
+                                    <td><a class="normal">2499</a></td>
+                                    <td>2399</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Tv/Tv-3.png"></td>
+                                    <td>K55</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Tv/Tv-4.png"></td>
+                                    <td>k55</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/Tv/Tv-4.png"></td>
+                                    <td>K55进</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                    <td>2399</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© COOCAA · 川网文【2011】 0579-016号 · ICP备案证号：川B2-20120050</p>
+        </footer>
+    </div>
+    <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="js/amazeui.min.js"></script>
+<script src="js/full-screen.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

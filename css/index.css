@@ -1,0 +1,40 @@
+table {
+	/*table-layout: fixed;*/
+	width: 100%;
+	text-align: center;	
+	border: 1px solid #c9c9c9;
+}
+table>thead {
+	background-color: #f3f3f3;
+}
+
+table>tbody tr>td:first-child{
+	padding: 1em 0.3em .2em;
+}
+table>tbody tr>td:nth-child(n+2){
+	vertical-align: middle;
+}
+table>tbody img{
+	width: 110px;
+}
+table td.abnormal {
+	color: #f00;
+}
+/*abnormal-history*/
+.export {
+	margin-bottom: 10px;
+}
+tbody tr td:last-child>img{
+	width: 15px;
+	cursor: pointer;
+}
+tbody tr.detail {
+	font-size: 13px;
+}
+tbody tr.detail>td{
+	padding: .5em 0;
+}
+tbody tr.hide {
+	display: none;
+}
+

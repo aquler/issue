@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>enter-price</title>
+	<meta name="description" content="这是一个 index 页面">
+	<meta name="keywords" content="index">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="icon" type="image/png" href="i/favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+
+	<link rel="stylesheet" href="css/amazeui.min.css"/>
+	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="css/enter-price.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+	以获得更好的体验！</p>
+	<![endif]-->
+
+	<header class="am-topbar am-topbar-inverse admin-header">
+		<div class="am-topbar-brand">
+			<strong>TV</strong> <small>价格预警系统</small>
+		</div>
+
+		<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+		<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+			<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+				<li class="am-dropdown" data-am-dropdown>
+					<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+						<span class="am-icon-users"></span> 用户名 <span class="am-icon-caret-down"></span>
+					</a>
+					<ul class="am-dropdown-content">
+						<li><a href="#"><span class="am-icon-user"></span> 个人中心</a></li>
+						<li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+					</ul>
+				</li>
+				<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="am-cf admin-main">
+		<!-- sidebar start -->
+		<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+			<div class="am-offcanvas-bar admin-offcanvas-bar">
+				<ul class="am-list admin-sidebar-list">
+					<li><a href="index.html"><span class="am-icon-home"></span> 监督价格异常</a></li>
+					<li><a href="abnormal-history.html"><span class="am-icon-table"></span> 价格异常历史</a></li>
+					<li><a href="enter-price.html" id="sidebar-selected"><span class="am-icon-pencil-square-o"></span> 录入价格</a></li>
+					<li class="admin-parent">
+						<a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 管理平台 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+							<li><a href="model-manage.html" class="am-cf"><span class="am-icon-check"></span> 型号管理<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+							<li><a href="message-manage.html"><span class="am-icon-puzzle-piece"></span> 消息管理</a></li>
+							<li><a href="user-manage.html"><span class="am-icon-th"></span> 用户管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+							<li><a href="alert-manage.html"><span class="am-icon-calendar"></span> 报警机制</a></li>
+							<li><a href="personal-manage.html"><span class="am-icon-bug"></span> 个人中心</a></li>
+							<li><a href="log-manage.html"><span class="am-icon-bug"></span> 日志管理</a></li>
+							<li><a href="platform-manage.html"><span class="am-icon-bug"></span> 平台管理</a></li>
+							<li><a href="power-manage.html"><span class="am-icon-bug"></span> 权限组管理</a></li>
+							<li><a href="series-manage.html"><span class="am-icon-bug"></span> 系列管理</a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<div class="am-panel am-panel-default admin-sidebar-panel">
+					<div class="am-panel-bd">
+						<p><span class="am-icon-bookmark"></span> 公告</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- sidebar end -->
+
+		<!-- content start -->
+		<div class="admin-content">
+			<div class="admin-content-body">
+				<!-- top -->
+				<div class="am-g am-padding am-padding-bottom-0">
+					<!-- 上传文件 -->
+					<form action="" class="am-u-sm-12 am-u-md-3" id="fileForm">
+						<div class="am-form-group am-form-file">
+							<button type="button" class="am-btn am-btn-danger am-btn-sm">
+								<i class="am-icon-cloud-upload"></i> 选择要上传的Excel</button>
+								<input id="doc-form-file" type="file" multiple>
+							</div>
+							<div id="file-list"></div>
+							<button class="am-btn am-btn-default am-btn-sm" type="submit">提交</button>
+							<!-- 显示excel上传结果返回显示 -->
+							<div id="excel-return">
+
+							</div>
+						</form>
+						<!-- 下载表格模版 -->
+						<form action="" class="am-form am-u-sm-12 am-u-md-3 am-fr" data-am-validator>
+							<div class="am-form-group" id="download">
+								<span>下载表格模板</span>
+								<input type="text" class="am-form-field am-input-sm" placeholder="请选择日期" data-am-datepicker readonly required />
+							</div>
+							<button class="am-btn am-btn-default am-btn-sm" type="submit">下载</button>
+						</form>
+					</div>
+
+					<hr>
+					<!-- 查找历史 -->
+					<div class="am-g">
+						<div class="am-u-sm-12 am-u-md-6">
+							<form class="am-form-inline" role="form" id="search"  data-am-validator>
+								<span>查找历史标准价格</span>
+								<input type="text" class="am-form-field am-input-sm" placeholder="请选择日期" data-am-datepicker readonly required />
+								<button class="am-btn am-btn-default am-btn-sm" type="submit">查询</button>
+							</form>
+						</div>
+
+					</div>
+
+					<!-- 表格内容 -->
+					<div class="am-g">
+						<div class="am-u-sm-12">
+							<form action="" class="content" onsubmit="return false" id="price-form">
+								<table class="am-table am-table-compact am-table-bordered" id="price-data">
+									<thead>
+										<tr>
+											<td></td>
+											<td>星期一</td>
+											<td>星期二</td>
+											<td>星期三</td>
+											<td>星期四</td>
+											<td>星期五</td>
+											<td>星期六</td>
+											<td>星期日</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>型号</td>
+											<td>8月1日</td>
+											<td>8月2日</td>
+											<td>8月3日</td>
+											<td>8月4日</td>
+											<td>8月5日</td>
+											<td>8月6日</td>
+											<td>8月7日</td>
+										</tr>
+										<tr>
+											<td>K55</td>
+											<td><input type="number" name="" value="2499" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+										</tr>
+										<tr>
+											<td>KX55</td>
+											<td><input type="number" name="" value="2499" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+										</tr>
+										<tr>
+											<td>A32</td>
+											<td><input type="number" name="" value="2499" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+											<td><input type="number" name="" value="2599" readOnly="true"></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="bottom am-g am-cf">
+									<div class="am-u-sm-12 am-u-md-3 save-return">
+
+									</div>
+									<div class="am-u-sm-12 am-u-md-3 am-fr am-text-right">
+										<button class="am-btn am-btn-default am-btn-sm" type="button">修改</button>
+										<button class="am-btn am-btn-default am-btn-sm" type="submit">保存</button>     
+									</div>
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+		        <footer class="admin-content-footer am-margin-top">
+		            <hr>
+		            <p class="am-padding-left">© COOCAA · 川网文【2011】 0579-016号 · ICP备案证号：川B2-20120050</p>
+		        </footer>
+			</div>
+			<!-- content end -->
+
+		</div>
+
+		<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="js/amazeui.min.js"></script>
+<script src="js/full-screen.js"></script>
+<script src="js/enter-price.js"></script>
+</body>
+</html>

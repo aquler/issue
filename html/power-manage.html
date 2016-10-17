@@ -1,0 +1,243 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>power-manage</title>
+	<meta name="description" content="这是一个 index 页面">
+	<meta name="keywords" content="index">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="icon" type="image/png" href="i/favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+
+	<link rel="stylesheet" href="css/amazeui.min.css"/>
+	<link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，为了更好的体验效果，请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+	以获得更好的体验！</p>
+	<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+	<div class="am-topbar-brand">
+		<strong>TV</strong> <small>价格预警系统</small>
+	</div>
+
+	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+	<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+		<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+			<li class="am-dropdown" data-am-dropdown>
+				<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+					<span class="am-icon-users"></span> 用户名 <span class="am-icon-caret-down"></span>
+				</a>
+				<ul class="am-dropdown-content">
+					<li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+					<li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+					<li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+				</ul>
+			</li>
+			<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+		</ul>
+	</div>
+</header>
+
+<div class="am-cf admin-main">
+	<!-- sidebar start -->
+	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+		<div class="am-offcanvas-bar admin-offcanvas-bar">
+			<ul class="am-list admin-sidebar-list">
+				<li><a href="index.html"><span class="am-icon-home"></span> 监督价格异常</a></li>
+				<li><a href="abnormal-history.html"><span class="am-icon-table"></span> 价格异常历史</a></li>
+				<li><a href="enter-price.html"><span class="am-icon-pencil-square-o"></span> 录入价格</a></li>
+				<li class="admin-parent">
+					<a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 管理平台 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+					<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+						<li><a href="model-manage.html" class="am-cf"><span class="am-icon-check"></span> 型号管理<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+						<li><a href="message-manage.html"><span class="am-icon-puzzle-piece"></span> 消息管理</a></li>
+						<li><a href="user-manage.html"><span class="am-icon-th"></span> 用户管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+						<li><a href="alert-manage.html"><span class="am-icon-calendar"></span> 报警机制</a></li>
+						<li><a href="personal-manage.html"><span class="am-icon-bug"></span> 个人中心</a></li>
+						<li><a href="log-manage.html"><span class="am-icon-bug"></span> 日志管理</a></li>
+						<li><a href="platform-manage.html"><span class="am-icon-bug"></span> 平台管理</a></li>
+						<li><a href="power-manage.html"><span class="am-icon-bug"></span> 权限组管理</a></li>
+						<li><a href="series-manage.html"><span class="am-icon-bug"></span> 系列管理</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<div class="am-panel am-panel-default admin-sidebar-panel">
+				<div class="am-panel-bd">
+					<p><span class="am-icon-bookmark"></span> 公告</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- sidebar end -->
+
+	<!-- content start -->
+	<div class="admin-content">
+		<div class="admin-content-body">
+			<!-- top-->
+			<div class="am-cf am-padding am-padding-bottom-0">
+				<div class="am-fl am-cf"><span class="am-text-primary am-text-lg">权限组管理</span></div>
+			</div>
+
+			<hr>
+			<!-- 消息模版 -->
+			<div class="am-g">
+				<div class="am-u-sm-12">
+					<form class="am-form" id="form-table">
+						<table class="am-table am-table-striped am-table-hover table-main">
+							<thead>
+								<tr>
+									<th>权限名</th><th>用户组</th><th>权限链接</th><th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>登陆</td>
+									<td>监督员</td>
+									<td>http://jintao525.com</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 修改</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>报警机制</td>
+									<td>监督员</td>
+									<td>http://jintao525.com</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 修改</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>监督异常</td>
+									<td>管理员</td>
+									<td>http://jintao525.com</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 修改</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>历史异常</td>
+									<td>超级管理员</td>
+									<td>http://jintao525.com</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 修改</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>个人中心</td>
+									<td>监督员</td>
+									<td>http://jintao525.com</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 修改</button>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="am-cf">
+							共 15 条记录
+							<div class="am-fr">
+								<ul class="am-pagination">
+									<li class="am-disabled"><a href="#">«</a></li>
+									<li class="am-active"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">4</a></li>
+									<li><a href="#">5</a></li>
+									<li><a href="#">»</a></li>
+								</ul>
+							</div>
+						</div>
+						<hr />
+						<p>注：.....</p>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+		<footer class="admin-content-footer">
+			<hr>
+			<p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+		</footer>
+	</div>
+	<!-- content end -->
+</div>
+
+<!-- change-modal -->
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="change-modal" >
+	<div class="am-modal-dialog">
+		<div class="am-modal-hd">修改
+			<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+		</div>
+		<form class="am-modal-bd am-form am-form-horizontal am-margin-top">
+			<div class="am-form-group">
+				<span class="am-u-sm-3  am-form-label">权限名</span>
+				<div class="am-u-sm-9">
+					<input type="text" required="requied" readonly="readonly" id="power-name">
+				</div>
+			</div>
+			<div class="am-form-group">
+				<span class="am-u-sm-3  am-form-label">用户组</span>
+				<div class="am-u-sm-9">
+					<label class="am-radio-inline">
+						<input type="radio" id="radio-1" name="radio1" value="监督员" data-am-ucheck checked> 监督员
+					</label>
+					<label class="am-radio-inline">
+						<input type="radio" id="radio-2" name="radio1" value="管理员" data-am-ucheck> 管理员
+					</label>
+					<label class="am-radio-inline">
+						<input type="radio" id="radio-3" name="radio1" value="超级管理员" data-am-ucheck> 超级管理员
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="am-btn am-btn-default">提交</button>
+		</form>
+	</div>
+</div>
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="js/amazeui.min.js"></script>
+<script src="js/full-screen.js"></script>
+<script src="js/power-manage.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>alert-manage</title>
+	<meta name="description" content="这是一个 index 页面">
+	<meta name="keywords" content="index">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="icon" type="image/png" href="i/favicon.png">
+	<link rel="apple-touch-icon-precomposed" href="i/app-icon72x72@2x.png">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+
+	<link rel="stylesheet" href="css/amazeui.min.css"/>
+	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="css/model-manage.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，为了更好的体验效果，请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+  <![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+	<div class="am-topbar-brand">
+		<strong>TV</strong> <small>价格预警系统</small>
+	</div>
+
+	<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+	<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+		<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+			<li class="am-dropdown" data-am-dropdown>
+				<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+					<span class="am-icon-users"></span> 用户名 <span class="am-icon-caret-down"></span>
+				</a>
+				<ul class="am-dropdown-content">
+					<li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+					<li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+					<li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+				</ul>
+			</li>
+			<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+		</ul>
+	</div>
+</header>
+
+<div class="am-cf admin-main">
+	<!-- sidebar start -->
+	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+		<div class="am-offcanvas-bar admin-offcanvas-bar">
+			<ul class="am-list admin-sidebar-list">
+				<li><a href="index.html"><span class="am-icon-home"></span> 监督价格异常</a></li>
+				<li><a href="abnormal-history.html"><span class="am-icon-table"></span> 价格异常历史</a></li>
+				<li><a href="enter-price.html"><span class="am-icon-pencil-square-o"></span> 录入价格</a></li>
+				<li class="admin-parent">
+					<a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 管理平台 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+					<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
+						<li><a href="model-manage.html" class="am-cf"><span class="am-icon-check"></span> 型号管理<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
+						<li><a href="message-manage.html"><span class="am-icon-puzzle-piece"></span> 消息管理</a></li>
+						<li><a href="user-manage.html"><span class="am-icon-th"></span> 用户管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
+						<li><a href="alert-manage.html"><span class="am-icon-calendar"></span> 报警机制</a></li>
+						<li><a href="personal-manage.html"><span class="am-icon-bug"></span> 个人中心</a></li>
+						<li><a href="log-manage.html"><span class="am-icon-bug"></span> 日志管理</a></li>
+						<li><a href="platform-manage.html"><span class="am-icon-bug"></span> 平台管理</a></li>
+						<li><a href="power-manage.html"><span class="am-icon-bug"></span> 权限组管理</a></li>
+						<li><a href="series-manage.html"><span class="am-icon-bug"></span> 系列管理</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<div class="am-panel am-panel-default admin-sidebar-panel">
+				<div class="am-panel-bd">
+					<p><span class="am-icon-bookmark"></span> 公告</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- sidebar end -->
+
+	<!-- content start -->
+	<div class="admin-content">
+		<div class="admin-content-body">
+			<!-- top -->
+			<div class="am-cf am-padding am-padding-bottom-0">
+				<div class="am-fl am-cf"><span class="am-text-primary am-text-lg">报警机制</span></div>
+			</div>
+
+			<hr>
+			
+			<!-- 型号详情表单 -->
+			<div class="am-g">
+				<div class="am-u-sm-12">
+					<form class="am-form am-form-horizontal" id="model-form">
+						<div class="am-form-group">
+							<div class="am-u-sm-3">高于标准价格</div>
+							<div class="am-u-sm-8">
+								<input type="number" placeholder="" value="" id="high-line">
+							</div>
+							<div class="am-u-sm-1">元</div>
+						</div>
+						<div class="am-form-group">
+							<div class="am-u-sm-3">低于标准价格</div>
+							<div class="am-u-sm-8">
+								<input type="number" placeholder="" value="200" id="low-line">
+							</div>
+							<div class="am-u-sm-1">元</div>
+						</div>
+						<div class="am-g am-margin-top">
+							<div class="am-u-sm-12 am-u-md-6">
+								<button class="am-btn am-btn-default am-fr" type="submit">提交</button> 
+							</div>
+							<div class="am-u-sm-12 am-u-md-6">
+								<span class="am-btn am-btn-default am-fl" id="resertBtn">重置</span>
+							</div>
+						</div>
+
+						<hr />
+           				<p>注：若高于标准价格的值为空，则没有上限价格</p>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+		<footer class="admin-content-footer">
+			<hr>
+			<p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+		</footer>
+	</div>
+	<!-- content end -->
+
+</div>
+<p id="alert-flag"></p>
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!-- 弹框提示 -->
+<div class="am-modal am-modal-alert" tabindex="-1" id="save-alert">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd"></div>
+    <div class="am-modal-bd"></div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn">确定</span>
+    </div>
+  </div>
+</div>
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="js/amazeui.min.js"></script>
+<script src="js/full-screen.js"></script>
+<script type="text/json" id="return-data"></script>
+<script src="js/alert-manage.js"></script>
+</body>
+</html>
